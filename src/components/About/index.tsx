@@ -10,12 +10,10 @@ import {
   WrapItem,
   useColorMode
 } from '@chakra-ui/react';
-import ReactAudioPlayer from 'react-audio-player';
+import Section from './Section';
 import Image from 'next/image';
+import MusicSection from './MusicSection';
 const About: FC<{}> = (props) => {
-  const { colorMode } = useColorMode();
-  const textColor = colorMode === 'light' ? 'gray.500' : 'gray.200';
-  console.log(textColor);
   return (
     <Grid
       w="100%"
@@ -33,125 +31,45 @@ const About: FC<{}> = (props) => {
         <Image src="/vertical_me.jpg" alt="Picture of the author" width={400} height={500} />
       </GridItem>
       <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} ml={[]} colSpan={[1, 2]}>
-        <Text
-          fontWeight="bold"
-          textTransform="uppercase"
-          fontSize="sm"
-          letterSpacing="wide"
-          color="teal.600">
-          School
-        </Text>
-        <Link
-          mt={1}
-          display="block"
-          fontSize="md"
-          lineHeight="normal"
-          fontWeight="semibold"
-          isExternal
-          href="https://colesan.edu.co/">
-          CES
-        </Link>
-        <Text mt={2} color={textColor}>
-          [2002-2017] Colegio Espiritu Santo was the only school in which i studied. It is located
-          in Colombia. In Elementary School i used to participate & won in varaiety of sports. In
-          HighSchool i started my interests in E-Sports & Tecnology
-        </Text>
+        <Section
+          title=" School &#128512;"
+          subtitle="CES"
+          link="https://colesan.edu.co/"
+          content="[2002-2017] Colegio Espiritu Santo was the only school in which i studied. It is located in
+          Colombia. In Elementary School i used to participate & won in varaiety of sports. In
+          HighSchool i started my interests in E-Sports & Technology"
+        />
       </GridItem>
       <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} colSpan={[1, 2]}>
-        <Text
-          fontWeight="bold"
-          textTransform="uppercase"
-          fontSize="sm"
-          letterSpacing="wide"
-          color="teal.600">
-          University
-        </Text>
-        <Link
-          mt={1}
-          display="block"
-          fontSize="lg"
-          lineHeight="normal"
-          isExternal
-          fontWeight="semibold"
-          href="#">
-          Andes University
-        </Link>
-        <Text mt={2} color={textColor}>
-          [2018-Present] Andes Unversity is the best University in Colombia and 250th worldwide. Im
-          a 7th semester student in Computer Science & Industrial Engineering
-        </Text>
+        <Section
+          title=" University &#128512;"
+          subtitle="Andes University"
+          link="https://uniandes.edu.co/"
+          content="[2018-Present] Andes Unversity is the best University in Colombia and 250th worldwide. Im
+          a 7th semester student in Computer Science & Industrial Engineering"
+        />
       </GridItem>
       <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} colSpan={[1, 4]}>
-        <Text
-          fontWeight="bold"
-          textTransform="uppercase"
-          fontSize="sm"
-          letterSpacing="wide"
-          color="teal.600">
-          More
-        </Text>
-        <Link
-          mt={1}
-          display="block"
-          fontSize="lg"
-          lineHeight="normal"
-          fontWeight="semibold"
-          isExternal
-          href="#">
-          Music Taste
-        </Link>
-        <Text mt={2} color={textColor}>
-          If you ask me about my taste it had changed and it will change in the next years. you can
-          even perceive the change in time in my personality. Here is a bit :
-        </Text>
+        <Section
+          title=" More 😆"
+          subtitle="Music Taste"
+          link="https://uniandes.edu.co/"
+          content=" If you ask me about my taste it had changed and it will change in the next years. you can
+          even perceive the change in time in my personality. Here is a bit :"
+        />
+
         <Wrap spacing="30px">
           <WrapItem display="flex" flexDirection="column">
-            <Text fontWeight="semibold" mt={2} color={textColor}>
-              Latin
-            </Text>
-            <Box overflow="hidden" borderWidth="1px" borderRadius="lg" display="flex">
-              <iframe
-                src="https://open.spotify.com/embed/track/6RmnotfWeDu72fXhpo26Bq"
-                width="300"
-                height="80"
-                allow="encrypted-media"></iframe>
-            </Box>
+            <MusicSection genre="Latin" src="track/6RmnotfWeDu72fXhpo26Bq" />
           </WrapItem>
           <WrapItem display="flex" flexDirection="column">
-            <Text fontWeight="semibold" mt={2} color={textColor}>
-              Rock
-            </Text>
-            <Box overflow="hidden" borderWidth="1px" borderRadius="lg" display="flex">
-              <iframe
-                src="https://open.spotify.com/embed/track/4oDZ5L8izBals6jKBJDBcX"
-                width="300"
-                height="80"
-                allow="encrypted-media"></iframe>
-            </Box>
+            <MusicSection genre="Rock" src="track/4oDZ5L8izBals6jKBJDBcX" />
           </WrapItem>
           <WrapItem display="flex" flexDirection="column">
-            <Text fontWeight="semibold" mt={2} color={textColor}>
-              Electronic
-            </Text>
-            <Box overflow="hidden" borderWidth="1px" borderRadius="lg" display="flex">
-              <iframe
-                src="https://open.spotify.com/embed/track/1cG0umU5TKStygKsPFZ9pY"
-                width="300"
-                height="80"
-                allow="encrypted-media"></iframe>
-            </Box>
+            <MusicSection genre="Electronic" src="track/1cG0umU5TKStygKsPFZ9pY" />
           </WrapItem>
           <WrapItem display="flex" flexDirection="column">
-            <Text fontWeight="semibold" mt={2} color={textColor}>
-              Full Playlist
-            </Text>
-            <Box overflow="hidden" borderWidth="1px" borderRadius="lg" display="flex">
-              <iframe
-                src="https://open.spotify.com/embed/playlist/5JCT2TbnPKQp5tGWJ8zCdH"
-                width="300"
-                height="80"
-                allow="encrypted-media"></iframe>
-            </Box>
+            <MusicSection genre="Full Playlist" src="playlist/5JCT2TbnPKQp5tGWJ8zCdH" />
           </WrapItem>
         </Wrap>
       </GridItem>

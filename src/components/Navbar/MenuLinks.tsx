@@ -23,7 +23,7 @@ const MenuLinks = ({ isOpen }: Props) => {
         <MenuItem to="/experience">Experience</MenuItem>
         <MenuItem to="/contact">Contact</MenuItem>
 
-        <Button colorScheme="teal" variant="solid" onClick={toggleColorMode}>
+        <Button colorScheme="blue" variant="solid" onClick={toggleColorMode}>
           {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Stack>
