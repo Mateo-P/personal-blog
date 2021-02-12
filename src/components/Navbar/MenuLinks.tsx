@@ -4,7 +4,7 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 type Props = {
   isOpen?: boolean;
 };
-//push pai
+
 const MenuLinks = ({ isOpen }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { onToggle } = useDisclosure();

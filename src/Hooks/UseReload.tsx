@@ -8,7 +8,7 @@ const useReload = (Layoutwidth): number | undefined => {
 
     const resizeListener = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => setWidth(getCurrentWidth()), 80);
+      timeoutId = setTimeout(() => setWidth(Layoutwidth()), 80);
       location.reload();
     };
     window.addEventListener('resize', resizeListener);
