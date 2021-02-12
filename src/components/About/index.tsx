@@ -114,8 +114,6 @@ const About: FC<{}> = (props) => {
                 src="https://open.spotify.com/embed/track/6RmnotfWeDu72fXhpo26Bq"
                 width="300"
                 height="80"
-                frameborder="1"
-                allowtransparency="true"
                 allow="encrypted-media"></iframe>
             </Box>
           </WrapItem>
@@ -128,8 +126,6 @@ const About: FC<{}> = (props) => {
                 src="https://open.spotify.com/embed/track/4oDZ5L8izBals6jKBJDBcX"
                 width="300"
                 height="80"
-                frameborder="0"
-                allowtransparency="true"
                 allow="encrypted-media"></iframe>
             </Box>
           </WrapItem>
@@ -142,8 +138,6 @@ const About: FC<{}> = (props) => {
                 src="https://open.spotify.com/embed/track/1cG0umU5TKStygKsPFZ9pY"
                 width="300"
                 height="80"
-                frameborder="0"
-                allowtransparency="true"
                 allow="encrypted-media"></iframe>
             </Box>
           </WrapItem>
@@ -156,8 +150,6 @@ const About: FC<{}> = (props) => {
                 src="https://open.spotify.com/embed/playlist/5JCT2TbnPKQp5tGWJ8zCdH"
                 width="300"
                 height="80"
-                frameborder="0"
-                allowtransparency="true"
                 allow="encrypted-media"></iframe>
             </Box>
           </WrapItem>

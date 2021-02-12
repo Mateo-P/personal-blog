@@ -15,9 +15,7 @@ const Interest: FC<Props> = ({ title, src }) => {
           width="460"
           height="315"
           src={src}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </AspectRatio>
     </>
   );
