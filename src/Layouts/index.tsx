@@ -16,14 +16,17 @@ const Layout: FC<Props> = ({ children }) => {
       </Head>
       <Flex
         justifyContent="space-between"
+        alignItems="center"
         flexDirection="column"
         minHeight="100%"
         spacing={4}
-        paddingLeft={[4, 16, 60]}
-        paddingRight={[4, 16, 32]}>
+        paddingLeft={[4, 16, 32, 32]}
+        paddingRight={[4, 16, 32, 32]}>
         <Navbar />
 
-        <Center mb={'16px'}>{children}</Center>
+        <Center maxW="1910px" mb={'16px'}>
+          {children}
+        </Center>
         <Spacer />
         <Box>
           <Footer />
