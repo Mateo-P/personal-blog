@@ -8,7 +8,7 @@ type Props = {
   children: string;
   image: string;
 };
-
+//
 export default function Project({ site, namesite, children, image }: Props) {
   const { colorMode } = useColorMode();
   const textColor = colorMode === 'light' ? 'blue.600' : 'blue.200';
