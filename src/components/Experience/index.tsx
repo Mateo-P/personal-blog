@@ -6,7 +6,10 @@ const Experience: FC<{}> = () => {
   return (
     <Wrap h={[]} spacing={[8, 8, 12, 16, 24]} justify="center">
       <WrapItem maxW="sm" p={8} borderWidth="1px" borderRadius="lg">
-        <Project site="https://mimenu.com.co/" namesite="Mimenu.com.co" image="/mimenulogo.png">
+        <Project
+          site="https://compleat.com.co/"
+          namesite="compleat.com.co"
+          image="/compleatLogo.jpeg">
           This personal project aims to improve the productivity and efficiency of restaurants in
           their daily operation. simplifying multiple processes starting from the order to the
           accounting and billing passing by the kitchen part and more.
