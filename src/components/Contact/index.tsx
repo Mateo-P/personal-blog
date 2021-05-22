@@ -13,50 +13,52 @@ function Contact() {
   return (
     <VStack p={4} maxW={[' 320px']} borderWidth="1px" borderRadius="lg">
       <Heading>Follow me on</Heading>
-      <Button w="270px" colorScheme="linkedin" leftIcon={<FaLinkedinIn />}>
-        <Link href="https://www.facebook.com/cristianmateo.perezmarin/" isExternal>
+      <Link href="https://www.linkedin.com/in/mateo-perez-4156291b2/" isExternal>
+        <Button w="270px" colorScheme="linkedin" leftIcon={<FaLinkedinIn />}>
           LinkedIn
-        </Link>
-      </Button>
-      <chakra.button
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        w="270px"
-        py="2"
-        bg={colorMode === 'light' ? 'black' : 'white'}
-        rounded="md">
-        <FaGithub color={colorMode !== 'light' ? 'black' : 'white'} />
-        <Link href="https://www.facebook.com/cristianmateo.perezmarin/" isExternal>
+        </Button>
+      </Link>
+      <Link href="https://github.com/Mateo-P" isExternal>
+        <chakra.button
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          w="270px"
+          py="2"
+          bg={colorMode === 'light' ? 'black' : 'white'}
+          rounded="md">
+          <FaGithub color={colorMode !== 'light' ? 'black' : 'white'} />
           <Text color={colorMode !== 'light' ? 'black' : 'white'} ml="8px">
             GitHub
           </Text>
-        </Link>
-      </chakra.button>
+        </chakra.button>
+      </Link>
 
-      <Button w="270px" colorScheme="facebook" leftIcon={<FaFacebook />}>
-        <Link href="https://www.facebook.com/cristianmateo.perezmarin/" isExternal>
+      <Link href="https://www.facebook.com/cristianmateo.perezmarin/" isExternal>
+        <Button w="270px" colorScheme="facebook" leftIcon={<FaFacebook />}>
           Facebook
-        </Link>
-      </Button>
-      <Button w="270px" colorScheme="twitter" leftIcon={<FaTwitter />}>
-        <Link href="https://twitter.com/MateoPerez08" isExternal>
+        </Button>
+      </Link>
+      <Link href="https://twitter.com/MateoPerez08" isExternal>
+        <Button w="270px" colorScheme="twitter" leftIcon={<FaTwitter />}>
           Twitter
-        </Link>
-      </Button>
-      <Button
-        w="270px"
-        bgGradient="linear(to-r,pink.500, #5851DB )"
-        leftIcon={<FaInstagram color="white" />}>
-        <Link textColor="white" href="https://www.instagram.com/mateoperez.08/" isExternal>
+        </Button>
+      </Link>
+      <Link textColor="white" href="https://www.instagram.com/mateoperez.08/" isExternal>
+        <Button
+          w="270px"
+          bgGradient="linear(to-r,pink.500, #5851DB )"
+          leftIcon={<FaInstagram color="white" />}>
           Instagram
-        </Link>
-      </Button>
-      <Button w="270px" colorScheme="red" leftIcon={<FaYoutube />}>
-        <Link href="https://www.youtube.com/channel/UCPjytC4RPWf1WZ8FIqNT40w" isExternal>
+        </Button>
+      </Link>
+
+      <Link href="https://www.youtube.com/channel/UCPjytC4RPWf1WZ8FIqNT40w" isExternal>
+        <Button w="270px" colorScheme="red" leftIcon={<FaYoutube />}>
           Youtube
-        </Link>
-      </Button>
+        </Button>
+      </Link>
+
       <iframe
         src={`https://open.spotify.com/follow/1/?uri=spotify:user:22o5kwvupxfzdyvpxbfjfgtny&size=detail&theme=${
           colorMode === 'light' ? 'light' : 'dark'
