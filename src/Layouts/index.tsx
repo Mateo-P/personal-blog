@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Flex, Box, Spacer, Center } from '@chakra-ui/react';
+import { Flex, Box, Spacer } from '@chakra-ui/react';
 import Navbar from '../components/Navbar/index';
 import Footer from '../components/Footer/index';
 import Head from 'next/head';
@@ -20,13 +20,11 @@ const Layout: FC<Props> = ({ children }) => {
         flexDirection="column"
         minHeight="100%"
         spacing={4}
-        paddingLeft={[4, 16, 32, 32]}
-        paddingRight={[4, 16, 32, 32]}>
+        pl={[4, 16, 32, 48]}
+        pr={[4, 16, 32, 48]}>
         <Navbar />
 
-        <Center maxW="1910px" mb={'16px'}>
-          {children}
-        </Center>
+        <Box>{children}</Box>
         <Spacer />
         <Box>
           <Footer />

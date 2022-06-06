@@ -1,7 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import { createBreakpoints } from '@chakra-ui/theme-tools';
-import useReload from '../src/Hooks/UseReload';
+import '../styles/main.css';
+
 // 2. Update the breakpoints as key-value pairs
 const breakpoints = createBreakpoints({
   sm: '320px',
@@ -9,17 +10,22 @@ const breakpoints = createBreakpoints({
   lg: '960px',
   xl: '1200px'
 });
+
 // 3. Extend the theme
-const theme = extendTheme({ breakpoints });
-function MyApp({ Component, pageProps }) {
-  const getCurrentWidth = () => {
-    if (process.browser && window !== undefined) {
-      return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const theme = extendTheme({
+  breakpoints,
+  colors: {
+    primary: {
+      100: '#fff'
+    },
+    dark_primary: {
+      100: '#1A202C'
     }
-  };
-  useReload(getCurrentWidth);
+  }
+});
+function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { VStack, Button, Heading, Link, useColorMode, chakra, Text } from '@chakra-ui/react';
 import {
   FaFacebook,
@@ -11,7 +10,15 @@ import {
 function Contact() {
   const { colorMode } = useColorMode();
   return (
-    <VStack p={4} maxW={[' 320px']} borderWidth="1px" borderRadius="lg">
+    <VStack
+      id="contact"
+      p={4}
+      m="auto"
+      mt="1rem"
+      mb="1rem"
+      maxW={[' 384px']}
+      borderWidth="1px"
+      borderRadius="lg">
       <Heading>Follow me on</Heading>
       <Link href="https://www.linkedin.com/in/mateo-perez-4156291b2/" isExternal>
         <Button w="270px" colorScheme="linkedin" leftIcon={<FaLinkedinIn />}>
@@ -44,7 +51,7 @@ function Contact() {
           Twitter
         </Button>
       </Link>
-      <Link textColor="white" href="https://www.instagram.com/mateoperez.08/" isExternal>
+      <Link textColor="white" href="https://www.instagram.com/cmp_0508/" isExternal>
         <Button
           w="270px"
           bgGradient="linear(to-r,pink.500, #5851DB )"

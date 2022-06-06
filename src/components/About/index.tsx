@@ -1,58 +1,22 @@
-import { FC, useState } from 'react';
-import {
-  Text,
-  Grid,
-  GridItem,
-  Box,
-  Center,
-  Link,
-  ListItem,
-  Wrap,
-  UnorderedList,
-  WrapItem,
-  useColorMode
-} from '@chakra-ui/react';
+import { FC } from 'react';
+import { Grid, GridItem, ListItem, Wrap, UnorderedList, WrapItem } from '@chakra-ui/react';
 import Section from './Section';
-import Image from 'next/image';
+
 import MusicSection from './MusicSection';
 const About: FC<{}> = (props) => {
+  const age = new Date(Date.now() - 1970).getUTCFullYear() - 2000;
+
   return (
     <Grid
+      id="about"
       w="100%"
       h={[]}
-      templateRows={[
-        'repeat(1, 1fr)',
-        'repeat(4, 1fr)',
-        'repeat(5, 1fr)',
-        'repeat(4, 1fr)',
-        'repeat(2, 1fr)',
-        'repeat(2, 1fr)'
-      ]}
-      templateColumns={[
-        'repeat(1, 1fr)',
-        'repeat(5, 1fr)',
-        'repeat(5, 1fr)',
-        'repeat(5, 1fr)',
-        'repeat(5, 1fr)',
-        'repeat(5, 1fr)'
-      ]}
+      mt="1rem"
+      mb="1rem"
+      templateRows={['repeat(2, 1fr)']}
+      templateColumns={['repeat(2, 1fr)']}
       gap={4}>
-      <GridItem
-        display="flex"
-        borderWidth="1px"
-        borderRadius="lg"
-        overflow="hidden"
-        rowSpan={[1, 1, 1, 1, 1, 2]}
-        colSpan={[1, 2, 2, 2, 1, 1]}>
-        <Image src="/vertical_me.jpg" alt="Picture of the author" width={400} height={500} />
-      </GridItem>
-      <GridItem
-        p={2}
-        borderWidth="1px"
-        borderRadius="lg"
-        rowSpan={[1]}
-        ml={[]}
-        colSpan={[1, 3, 3, 3, 2, 2]}>
+      <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} ml={[]} colSpan={[2, 2, 1]}>
         <Section
           title=" Education 📚"
           subtitle="CES"
@@ -63,21 +27,15 @@ const About: FC<{}> = (props) => {
           <Section
             subtitle="Andes University"
             link="https://uniandes.edu.co/"
-            content="[2018-Present] Andes Unversity is the best University in Colombia and 250th worldwide. Im
-        a 7th semester student in Computer Science & Industrial Engineering"
+            content="[2018-2022] Andes Unversity is the best University in Colombia and 250th worldwide. I studied and graduated as a Software Engineer"
           />
         </Section>
       </GridItem>
-      <GridItem
-        p={2}
-        borderWidth="1px"
-        borderRadius="lg"
-        rowSpan={[1]}
-        colSpan={[1, 5, 5, 5, 2, 2]}>
+      <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} colSpan={[2, 2, 1]}>
         <Section
           title=" Made in  🇨🇴"
           subtitle="Me"
-          content="Im a 20 years old software developer from Colombia. To be more specific I am from  the Colombian Eastern Plains, which make me a cowboy. Even though I feel like a world citizen. I like meeting new people and cultures from different parts of the world.  ">
+          content={`Im a ${age} years old software developer from Colombia. To be more specific I am from  the Colombian Eastern Plains, which make me a cowboy. Even though I feel like a world citizen. I like meeting new people and cultures from different parts of the world.`}>
           <Section subtitle="Hobbies" content="">
             <UnorderedList>
               Games
@@ -90,12 +48,7 @@ const About: FC<{}> = (props) => {
           </Section>
         </Section>
       </GridItem>
-      <GridItem
-        p={2}
-        borderWidth="1px"
-        borderRadius="lg"
-        rowSpan={[1, 3, 2, 1, 1, 1]}
-        colSpan={[1, 5, 5, 5, 5, 4]}>
+      <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} colSpan={[2]}>
         <Section
           title=" More 🎶"
           subtitle="Music Taste"

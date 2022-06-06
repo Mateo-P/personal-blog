@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Flex, Spacer } from '@chakra-ui/react';
+import { Spacer } from '@chakra-ui/react';
 import NavbarLogo from './NavbarLogo';
 import MenuToggle from './Menutoggle';
 import NavBarContainer from './NavBarContainer';

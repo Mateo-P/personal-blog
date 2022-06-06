@@ -3,7 +3,15 @@ import { SimpleGrid, Box } from '@chakra-ui/react';
 import Interest from './interest';
 function Interests() {
   return (
-    <SimpleGrid p={4} borderWidth="1px" borderRadius="lg" minChildWidth="320px" spacing="40px">
+    <SimpleGrid
+      id="interests"
+      p={4}
+      mt="1rem"
+      mb="1rem"
+      borderWidth="1px"
+      borderRadius="lg"
+      minChildWidth="320px"
+      spacing="40px">
       <Box>
         <Interest title="Science 🚀" src="https://www.youtube.com/embed/VNqNnUJVcVs" />
       </Box>

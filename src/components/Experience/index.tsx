@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Text, Wrap, WrapItem, Box, Center } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Wrap, WrapItem } from '@chakra-ui/react';
 import Project from './Project';
+
 const Experience: FC<{}> = () => {
   return (
-    <Wrap h={[]} spacing={[8, 8, 12, 16, 24]} justify="center">
+    <Wrap id="experience" h={[]} mt="1rem" mb="1rem" spacing={[8, 8, 12, 16, 24]} justify="center">
       <WrapItem maxW="sm" p={8} borderWidth="1px" borderRadius="lg">
         <Project
           site="https://compleat.com.co/"
