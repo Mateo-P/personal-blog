@@ -20,8 +20,8 @@ const Layout: FC<Props> = ({ children }) => {
         flexDirection="column"
         minHeight="100%"
         spacing={4}
-        pl={[4, 16, 32, 48]}
-        pr={[4, 16, 32, 48]}>
+        pl={[4, 16, 32, 32]}
+        pr={[4, 16, 32, 32]}>
         <Navbar />
 
         <Box>{children}</Box>
