@@ -5,7 +5,8 @@ import {
   FaInstagram,
   FaYoutube,
   FaGithub,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaSpotify
 } from 'react-icons/fa';
 function Contact() {
   const { colorMode } = useColorMode();
@@ -19,7 +20,10 @@ function Contact() {
       maxW={[' 384px']}
       borderWidth="1px"
       borderRadius="lg">
-      <Heading>Follow me on</Heading>
+      <Heading textAlign={'center'}>
+        Contact me on <br />
+        👇🏼👇🏼👇🏼
+      </Heading>
       <Link href="https://www.linkedin.com/in/mateo-perez-4156291b2/" isExternal>
         <Button w="270px" colorScheme="linkedin" leftIcon={<FaLinkedinIn />}>
           LinkedIn
@@ -46,7 +50,7 @@ function Contact() {
           Facebook
         </Button>
       </Link>
-      <Link href="https://twitter.com/MateoPerez08" isExternal>
+      <Link href="https://twitter.com/cmp_0508" isExternal>
         <Button w="270px" colorScheme="twitter" leftIcon={<FaTwitter />}>
           Twitter
         </Button>
@@ -65,14 +69,13 @@ function Contact() {
           Youtube
         </Button>
       </Link>
-
-      <iframe
-        src={`https://open.spotify.com/follow/1/?uri=spotify:user:22o5kwvupxfzdyvpxbfjfgtny&size=detail&theme=${
-          colorMode === 'light' ? 'light' : 'dark'
-        }`}
-        width="269"
-        height="56"
-        scrolling="no"></iframe>
+      <Link
+        href="https://open.spotify.com/user/22o5kwvupxfzdyvpxbfjfgtny?si=8a7223da5efa453e&nd=1"
+        isExternal>
+        <Button w="270px" colorScheme="green" leftIcon={<FaSpotify />}>
+          Spotify
+        </Button>
+      </Link>
     </VStack>
   );
 }

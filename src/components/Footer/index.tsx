@@ -1,11 +1,11 @@
 import React from 'react';
-import { Center } from '@chakra-ui/react';
+import { Center, Box, Divider } from '@chakra-ui/react';
 function Footer() {
   return (
-    <footer>
-      <hr />
-      <Center p={5}>Made with Nextjs & chakra-UI by Mateo Perez.</Center>
-    </footer>
+    <Box>
+      <Divider />
+      <Center p={5}>made with nextjs & chakra hosted in vercel.</Center>
+    </Box>
   );
 }
 

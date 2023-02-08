@@ -8,29 +8,23 @@ interface Props {
 }
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <>
-      <Head>
-        <title>Mateo Perez</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <Flex
-        justifyContent="space-between"
-        alignItems="center"
-        flexDirection="column"
-        minHeight="100%"
-        spacing={4}
-        pl={[4, 16, 32, 32]}
-        pr={[4, 16, 32, 32]}>
-        <Navbar />
+    <Flex
+      margin={'auto'}
+      maxW={1280}
+      justifyContent="space-between"
+      alignItems="center"
+      flexDirection="column"
+      minHeight="100%"
+      gap={4}
+      pl={[4, 16, 32, 32]}
+      pr={[4, 16, 32, 32]}>
+      <Navbar />
 
-        <Box>{children}</Box>
-        <Spacer />
-        <Box>
-          <Footer />
-        </Box>
-      </Flex>
-    </>
+      <Box>{children}</Box>
+      <Spacer />
+
+      <Footer />
+    </Flex>
   );
 };
 

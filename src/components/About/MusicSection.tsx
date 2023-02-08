@@ -1,16 +1,16 @@
 import { FC } from 'react';
 import { Text, Box } from '@chakra-ui/react';
-interface Props {
+type Props = {
   genre: string;
   src: string;
-}
-const MusicSection: FC<Props> = ({ genre, src }) => {
+};
+const MusicSection = ({ genre, src }: Props) => {
   return (
     <>
       <Text fontWeight="semibold" mt={2}>
         {genre}
       </Text>
-      <Box overflow="hidden" borderWidth="1px" borderRadius="lg" display="flex">
+      <Box overflow="hidden" display="flex">
         <iframe
           src={`https://open.spotify.com/embed/${src}`}
           width="300"

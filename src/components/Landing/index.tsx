@@ -4,7 +4,6 @@ import { ChevronDownIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 
 const Landing = () => {
-  const ref = useRef(document.createElement('div'));
   const nameColor = useColorModeValue('#2B6CB0', '#90CDF4');
 
   return (
@@ -18,41 +17,37 @@ const Landing = () => {
       flexDirection="column"
       justifyContent="space-between"
       minH={'100vh'}>
-      {ref.current && (
-        <Box
-          display="flex"
-          w="100%"
-          alignItems="center"
-          flexDirection={['column', 'column', 'column', 'column', 'row']}
-          justifyContent="center"
-          align="center">
-          <Heading
-            as="h1"
-            size="3xl"
-            mb="1rem"
-            textAlign={['center', 'center', 'center', 'left', 'left']}>
-            <>
-              <Text as="kbd">Hello! I'm </Text>
+      <Box
+        display="flex"
+        w="100%"
+        alignItems="center"
+        flexDirection={['column', 'column', 'column', 'column', 'row']}
+        justifyContent="space-between">
+        <Heading
+          as="h1"
+          size="3xl"
+          mb="1rem"
+          textAlign={['center', 'center', 'center', 'left', 'left']}>
+          <>
+            <Text as="kbd">hello! </Text>
+            <br />
+            <Box>
+              <Text as="kbd">i'm </Text>
+
               <Text as="kbd" color={nameColor}>
-                Mateo Perez.
+                mateo pérez.
               </Text>
-              <br />
-              <Text as="kbd">I'm a Full-Stack Dev.</Text>
-            </>
-          </Heading>
-          <Spacer />
-          <Box
-            position="relative"
-            borderRadius="0.5rem"
-            overflow="hidden"
-            minH="450px"
-            minW="370px"
-            h="450px"
-            w="370px">
-            <Image src="/vertical_me.jpeg" alt="Picture of the author" layout="fill" />
-          </Box>
+            </Box>
+
+            <Text as="kbd">reader & learner. people usually call it full stack dev 🤔.</Text>
+          </>
+        </Heading>
+
+        <Box minH={345} minW={250} position="relative" borderRadius="0.5rem" overflow="hidden">
+          <Image src="/Subject.png" alt="Picture of the author" fill />
         </Box>
-      )}
+      </Box>
+
       <a href="#about">
         <ChevronDownIcon cursor="pointer" w="12" h="12" top="35%"></ChevronDownIcon>
       </a>

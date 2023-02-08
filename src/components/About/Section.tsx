@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Text, Link, useColorMode } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 interface Props {
@@ -8,7 +7,7 @@ interface Props {
   content: string;
   children?: React.ReactNode;
 }
-const Section: FC<Props> = ({ title, subtitle, link, content, children }) => {
+const Section = ({ title, subtitle, link, content, children }: Props) => {
   const { colorMode } = useColorMode();
   const textColor = colorMode === 'light' ? 'gray.500' : 'gray.200';
   return (
@@ -26,7 +25,8 @@ const Section: FC<Props> = ({ title, subtitle, link, content, children }) => {
 
       <Link
         mt={1}
-        display="block"
+        display="flex"
+        alignItems={'center'}
         fontSize="xl"
         lineHeight="normal"
         fontWeight="semibold"

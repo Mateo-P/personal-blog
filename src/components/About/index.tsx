@@ -3,7 +3,7 @@ import { Grid, GridItem, ListItem, Wrap, UnorderedList, WrapItem } from '@chakra
 import Section from './Section';
 
 import MusicSection from './MusicSection';
-const About: FC<{}> = (props) => {
+const About = () => {
   const age = new Date(Date.now() - 1970).getUTCFullYear() - 2000;
 
   return (
