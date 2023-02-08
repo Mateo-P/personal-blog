@@ -1,6 +1,10 @@
 import { Text, useColorMode } from '@chakra-ui/react';
 
-const MenuItem = ({ children, to = '/' }) => {
+type Props = {
+  children?: any;
+  to?: string;
+};
+const MenuItem = ({ children, to = '/' }: Props) => {
   const { colorMode } = useColorMode();
   return (
     <a href={`#${to}`}>
