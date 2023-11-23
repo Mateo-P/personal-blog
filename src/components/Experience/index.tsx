@@ -4,7 +4,7 @@ import Section from '../About/Section';
 
 const Experience = () => {
   return (
-    <Box p={2} borderWidth="1px" borderRadius="lg">
+    <Box   id="experience" p={2} borderWidth="1px" borderRadius="lg">
       <Section
         title="Experience 📚"
         subtitle="teacher assistant"

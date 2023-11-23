@@ -14,7 +14,7 @@ const Navbar: FC<Props> = (props) => {
       <NavbarLogo image={'/logo_me.png'} />
       <Spacer />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks  toggle={toggle} isOpen={isOpen}  />
     </NavBarContainer>
   );
 };

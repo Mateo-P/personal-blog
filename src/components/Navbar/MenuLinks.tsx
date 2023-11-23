@@ -2,10 +2,11 @@ import { Box, Button, Stack, useColorMode } from '@chakra-ui/react';
 import MenuItem from './MenuItem';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 type Props = {
+  toggle: () => void;
   isOpen?: boolean;
 };
 
-const MenuLinks = ({ isOpen }: Props) => {
+const MenuLinks = ({ toggle, isOpen }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -16,12 +17,20 @@ const MenuLinks = ({ isOpen }: Props) => {
         spacing={8}
         align="center"
         justify={['center', 'space-between', 'flex-end', 'flex-end']}
-        direction={['column', 'row', 'row', 'row']}
+        direction={{ sm: 'column', md: 'row' }}
         pt={[4, 4, 0, 0]}>
-        <MenuItem to="about">About</MenuItem>
-        <MenuItem to="interests">Interests</MenuItem>
-        <MenuItem to="experience">Experience</MenuItem>
-        <MenuItem to="contact">Contact</MenuItem>
+        <MenuItem onClick={toggle} to="about">
+          About
+        </MenuItem>
+        <MenuItem onClick={toggle} to="interests">
+          Interests
+        </MenuItem>
+        <MenuItem onClick={toggle} to="experience">
+          Experience
+        </MenuItem>
+        <MenuItem onClick={toggle} to="contact">
+          Contact
+        </MenuItem>
 
         <Button colorScheme="blue" variant="solid" onClick={toggleColorMode}>
           {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}

@@ -7,6 +7,7 @@ export default function Home() {
     <Layout>
       <Landing />
       <About />
+      <Interests/>
       <Experience />
       <Contact />
     </Layout>

@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { Heading, Spacer, Box, Text, useColorModeValue } from '@chakra-ui/react';
+import { Heading, Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
 
@@ -9,7 +8,7 @@ const Landing = () => {
   return (
     <Box
       id="home"
-      pt={['7rem', '8rem', '12rem', '15rem', '15rem']}
+      pt={{sm:'5rem',md: '7rem',xl: '15rem'}}
       mt="1rem"
       pb="1rem"
       display="flex"
@@ -24,22 +23,23 @@ const Landing = () => {
         flexDirection={['column', 'column', 'column', 'column', 'row']}
         justifyContent="space-between">
         <Heading
-          as="h1"
+          as="h5"
           size="3xl"
-          mb="1rem"
+          mb="2rem"
+       
           textAlign={['center', 'center', 'center', 'left', 'left']}>
           <>
-            <Text as="kbd">hello! </Text>
+            <Text fontSize={{sm:'2xl',md:'6xl'}} as="kbd">hello! </Text>
             <br />
             <Box>
-              <Text as="kbd">i'm </Text>
+              <Text fontSize={{sm:'2xl',md:'6xl'}} as="kbd">i'm </Text>
 
-              <Text as="kbd" color={nameColor}>
+              <Text fontSize={{sm:'2xl',md:'6xl'}} as="kbd" color={nameColor}>
                 mateo pérez.
               </Text>
             </Box>
-
-            <Text as="kbd">reader & learner. people usually call it full stack dev 🤔.</Text>
+      
+            <Text fontSize={['xl','2xl','2xl','6xl','6xl']} as="kbd">i google & gpt stuff, people usually call it full stack dev 🤔.</Text>
           </>
         </Heading>
 
