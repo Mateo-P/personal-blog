@@ -10,7 +10,7 @@ const Landing = () => {
       id="home"
       pt={{sm:'5rem',md: '7rem',xl: '15rem'}}
       mt="1rem"
-      pb={{sm:'6rem',md:'1rem'}}
+      pb={{sm:'7rem',md:'1rem'}}
       display="flex"
       alignItems="center"
       flexDirection="column"
