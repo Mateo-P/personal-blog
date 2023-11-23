@@ -1,6 +1,11 @@
 import React from 'react';
 import { Center, Box, Divider } from '@chakra-ui/react';
-function Footer() {
+
+type Props ={
+  footer:any;
+}
+
+function Footer({footer}:Props) {
   return (
     <Box>
       <Divider />

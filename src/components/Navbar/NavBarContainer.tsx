@@ -15,7 +15,7 @@ const NavBarContainer = ({ children, ...props }) => {
       mb={8}
       p={4}
       bg={[colorMode === 'light' ? 'primary.100' : 'dark_primary.100']}
-      {...props}>
+  >
       {children}
     </Flex>
   );

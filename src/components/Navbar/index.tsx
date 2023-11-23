@@ -4,17 +4,20 @@ import NavbarLogo from './NavbarLogo';
 import MenuToggle from './Menutoggle';
 import NavBarContainer from './NavBarContainer';
 import MenuLinks from './MenuLinks';
-interface Props {}
-const Navbar: FC<Props> = (props) => {
+interface Props {
+  navbar:any;
+}
+const Navbar: FC<Props> = ({navbar}) => {
+  const {logo,links}= navbar
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-    <NavBarContainer {...props}>
-      <NavbarLogo image={'/logo_me.png'} />
+    <NavBarContainer>
+      <NavbarLogo logo={logo} />
       <Spacer />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
-      <MenuLinks  toggle={toggle} isOpen={isOpen}  />
+      <MenuLinks links={links}  toggle={toggle} isOpen={isOpen}  />
     </NavBarContainer>
   );
 };

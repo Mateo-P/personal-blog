@@ -1,8 +1,16 @@
 export default (req, res) => {
   res.status(200).json({
-    restaurantPhone: '3144183191',
-    restaurantName: 'restaurant-name',
-    categories: [
+    navbar: {
+      logo: { src: '/logo_me.png', alt: 'mateo perez' },
+      links: [
+        { label: 'About', to: 'about' },
+        { label: 'Interests', to: 'interests' },
+        { label: 'Experience', to: 'experience' },
+        { label: 'Contact', to: 'contact' }
+      ]
+    },
+    body: 'restaurant-name',
+    footer: [
       {
         name: 'category-1',
         items: [

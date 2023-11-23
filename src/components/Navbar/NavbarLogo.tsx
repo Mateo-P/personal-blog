@@ -1,13 +1,13 @@
-import { FC } from 'react';
 import { Center, Image } from '@chakra-ui/react';
 interface Props {
-  image: string;
+  logo: { src: string; alt: string };
 }
-const NavbarLogo: FC<Props> = ({ image }) => {
+const NavbarLogo = ({ logo }: Props) => {
+  const { src, alt } = logo;
   return (
     <Center cursor="pointer">
       <a href={'#home'}>
-        <Image src={image} alt="mateo perez" width={75} height={65} />
+        <Image src={src} alt={alt} width={75} height={65} />
       </a>
     </Center>
   );
