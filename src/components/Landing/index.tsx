@@ -10,7 +10,7 @@ const Landing = () => {
       id="home"
       pt={{sm:'5rem',md: '7rem',xl: '15rem'}}
       mt="1rem"
-      pb="1rem"
+      pb={{sm:'6rem',md:'1rem'}}
       display="flex"
       alignItems="center"
       flexDirection="column"
@@ -43,13 +43,13 @@ const Landing = () => {
           </>
         </Heading>
 
-        <Box minH={345} minW={250} position="relative" borderRadius="0.5rem" overflow="hidden">
+        <Box minH={{sm:250,md:345}} minW={{sm:181,md:250}} position="relative" borderRadius="0.5rem" overflow="hidden">
           <Image src="/Subject.png" alt="Picture of the author" fill />
         </Box>
       </Box>
 
       <a href="#about">
-        <ChevronDownIcon cursor="pointer" w="12" h="12" top="35%"></ChevronDownIcon>
+        <ChevronDownIcon cursor="pointer" w="12" h="12" ></ChevronDownIcon>
       </a>
     </Box>
   );
