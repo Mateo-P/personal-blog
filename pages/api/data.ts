@@ -1,5 +1,7 @@
-export default (req, res) => {
-  res.status(200).json({
+export async function getData() {
+
+  //const res = await fetch(`http://localhost:3000/api/data`); // Update URL as per your setup
+  const data = {
     navbar: {
       logo: { src: '/logo_me.png', alt: 'mateo perez' },
       links: [
@@ -89,5 +91,13 @@ export default (req, res) => {
         ]
       }
     ]
-  });
+  };
+
+  // Pass data to the page via props
+  return data;
+}
+
+export default async (req, res) => {
+  const jsonData = await getData()
+  res.status(200).json(jsonData);
 };

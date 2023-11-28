@@ -1,7 +1,8 @@
-import { getData } from '../data/api';
+
 import Layout from '../src/Layouts';
 
 import { About, Interests, Experience, Contact, Landing } from '../src/components';
+import { getData } from './api/data';
 
 export default function Home({ data }) {
   const { navbar, body, footer } = data;
