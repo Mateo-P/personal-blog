@@ -1,3 +1,4 @@
+import { getData } from '../data/api';
 import Layout from '../src/Layouts';
 
 import { About, Interests, Experience, Contact, Landing } from '../src/components';
@@ -17,10 +18,30 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/data`); // Update URL as per your setup
-  const data = await res.json();
+  let data;
+  try {
+    data = await getData();
+  } catch (e) {
+    /**
+     * If something goes wrong, we return a 404 page
+     */
+    return {
+      notFound: true,
+    };
+  }
 
-  // Pass data to the page via props
-  return { props: { data } };
+  if (!data) {
+    /**
+     * If we don't get a `photo` back, we return a 404 page
+     */
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      data,
+    },
+  };
 }

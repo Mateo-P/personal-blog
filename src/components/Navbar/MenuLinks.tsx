@@ -21,7 +21,7 @@ const MenuLinks = ({ links, toggle, isOpen }: Props) => {
         direction={{ sm: 'column', md: 'row' }}
         pt={[4, 4, 0, 0]}>
         {links.map(({ label, to }) => (
-          <MenuItem onClick={toggle} to={to}>
+          <MenuItem key={label} onClick={toggle} to={to}>
             {label}
           </MenuItem>
         ))}
