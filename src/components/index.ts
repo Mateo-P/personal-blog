@@ -1,7 +1,8 @@
 import Landing from './Landing';
 import About from './About';
-import Experience from './Experience';
-import Interests from './Interest';
+import TimeLine from './TimeLine';
+import AccordionList from './Accordion';
 import Contact from './Contact';
+import Projects from './Projects';
 
-export { Landing, About, Experience, Interests, Contact };
+export { Landing, About, TimeLine, AccordionList, Contact, Projects };

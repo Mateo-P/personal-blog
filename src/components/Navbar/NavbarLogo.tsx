@@ -1,13 +1,14 @@
-import { Center, Image } from '@chakra-ui/react';
+import { Center, Heading } from '@chakra-ui/react';
 interface Props {
-  logo: { src: string; alt: string };
+  logo: string;
 }
 const NavbarLogo = ({ logo }: Props) => {
-  const { src, alt } = logo;
   return (
     <Center cursor="pointer">
       <a href={'#home'}>
-        <Image src={src} alt={alt} width={75} height={65} />
+        <Heading mt={-3} textAlign={"center"} size="4xl">
+          {logo}
+        </Heading>
       </a>
     </Center>
   );

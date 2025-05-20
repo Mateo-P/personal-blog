@@ -1,5 +1,6 @@
-import { Text, Link, useColorMode } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+'use client'
+import { Text, Link, } from '@chakra-ui/react';
+import { useColorMode } from '../ui/color-mode';
 interface Props {
   title?: string;
   subtitle: string;
@@ -30,9 +31,8 @@ const Section = ({ title, subtitle, link, content, children }: Props) => {
         fontSize="xl"
         lineHeight="normal"
         fontWeight="semibold"
-        isExternal
         href={link}>
-        {subtitle} {link && <ExternalLinkIcon mx="2px" />}
+        {subtitle}
       </Link>
       <Text fontSize="lg" mt={2} color={textColor}>
         {content}

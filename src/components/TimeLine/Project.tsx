@@ -1,7 +1,8 @@
-import React from 'react';
-import { Box, Link, useColorMode } from '@chakra-ui/react';
-import Image from 'next/image';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+"use client";
+import { Box, Link } from "@chakra-ui/react";
+import Image from "next/image";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { useColorMode } from "../ui/color-mode";
 type Props = {
   namesite: string;
   site: string;
@@ -26,7 +27,7 @@ export default function Project({ site, namesite, children, image }: Props) {
         lineHeight="normal"
         fontWeight="semibold"
         href={site}
-        isExternal>
+        >
         {namesite}
         <ExternalLinkIcon mx="2px" />
       </Link>

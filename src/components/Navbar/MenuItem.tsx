@@ -1,15 +1,19 @@
-import { Text, useColorMode } from '@chakra-ui/react';
+import { Text } from "@chakra-ui/react";
 
 type Props = {
   children?: any;
   to?: string;
-  onClick?: ()=>void;
+  onClick?: () => void;
 };
-const MenuItem = ({onClick, children, to = '/' }: Props) => {
-  const { colorMode } = useColorMode();
+const MenuItem = ({ onClick, children, to = "/" }: Props) => {
   return (
-    <a onClick={onClick} href={`#${to}`}>
-      <Text cursor="pointer" display="block" color={colorMode === 'light' ? 'black' : 'white'}>
+    <a onClick={onClick} href={to}>
+      <Text
+        cursor="pointer"
+        display="block"
+        _hover={{ color: "var(--chakra-colors-fg)" }}
+        color="var(--chakra-colors-fg-muted)"
+      >
         {children}
       </Text>
     </a>

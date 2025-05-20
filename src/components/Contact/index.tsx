@@ -1,82 +1,146 @@
-import { VStack, Button, Heading, Link, useColorMode, chakra, Text } from '@chakra-ui/react';
+"use client";
 import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaGithub,
-  FaLinkedinIn,
-  FaSpotify
-} from 'react-icons/fa';
+  VStack,
+  Button,
+  Heading,
+  chakra,
+  Text,
+  Input,
+  Textarea,
+  HStack,
+  Box,
+  Fieldset,
+  Field,
+} from "@chakra-ui/react";
+import React, { useState, useRef, FormEvent, ChangeEvent } from "react";
+import { IoSend } from "react-icons/io5";
+import emailjs from '@emailjs/browser';
+import { Toaster, toaster } from "@/components/ui/toaster"
+
 function Contact() {
-  const { colorMode } = useColorMode();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        formRef.current!,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY!
+      );
+
+
+      setName("");
+      setEmail("");
+      setMessage("");
+      toaster.success({
+        title: "email sent",
+        description: "message sent successfully!",
+      })
+      console.log("email sent");
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toaster.error({
+        title: "error sending email",
+        description: "failed to send message. try again.",
+      })
+
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, setter: (value: string) => void) => {
+    setter(e.target.value);
+  };
+
   return (
-    <VStack
+    <Box
       id="contact"
-      p={4}
       m="auto"
       mt="1rem"
       mb="1rem"
-      maxW={[' 384px']}
-      borderWidth="1px"
-      borderRadius="lg">
-      <Heading textAlign={'center'}>
-        Contact me on <br />
-        👇🏼👇🏼👇🏼
-      </Heading>
-      <Link href="https://www.linkedin.com/in/mateo-perez-4156291b2/" isExternal>
-        <Button w="270px" colorScheme="linkedin" leftIcon={<FaLinkedinIn />}>
-          LinkedIn
-        </Button>
-      </Link>
-      <Link href="https://github.com/Mateo-P" isExternal>
-        <chakra.button
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          w="270px"
-          py="2"
-          bg={colorMode === 'light' ? 'black' : 'white'}
-          rounded="md">
-          <FaGithub color={colorMode !== 'light' ? 'black' : 'white'} />
-          <Text color={colorMode !== 'light' ? 'black' : 'white'} ml="8px">
-            GitHub
-          </Text>
-        </chakra.button>
-      </Link>
+      width={{ base: "100%", sm: "100%", md: "50%" }}
+    >
+      <VStack alignItems="stretch">
+        <Heading size="xl" textAlign="center">
+          contact
+        </Heading>
+        <Text textAlign="center" color="gray.500" maxW="2xl" mx="auto">
+          feel free to reach out. i'm always open to discussing new projects,
+          creative ideas or just to say hi.
+        </Text>
+        <chakra.form ref={formRef} onSubmit={handleSubmit} width="100%">
+          <Fieldset.Root>
+            <VStack alignItems="stretch">
+              <Fieldset.Legend></Fieldset.Legend>
 
-      <Link href="https://www.facebook.com/cristianmateo.perezmarin/" isExternal>
-        <Button w="270px" colorScheme="facebook" leftIcon={<FaFacebook />}>
-          Facebook
-        </Button>
-      </Link>
-      <Link href="https://twitter.com/cmp_0508" isExternal>
-        <Button w="270px" colorScheme="twitter" leftIcon={<FaTwitter />}>
-          Twitter
-        </Button>
-      </Link>
-      <Link textColor="white" href="https://www.instagram.com/cmp_0508/" isExternal>
-        <Button
-          w="270px"
-          bgGradient="linear(to-r,pink.500, #5851DB )"
-          leftIcon={<FaInstagram color="white" />}>
-          Instagram
-        </Button>
-      </Link>
+              <Fieldset.Content>
+                <VStack gap={4} alignItems="stretch">
+                  <HStack gap={4}>
+                    <Field.Root flexGrow={1} id="first-name" required>
+                      <Field.Label srOnly>First Name</Field.Label>
+                      <Input
+                        borderRadius="lg"
+                        placeholder="name"
+                        value={name}
+                        onChange={(e) => handleInputChange(e, setName)}
+                        name="name"
+                      />
+                    </Field.Root>
+                    <Field.Root flexGrow={1} id="email" required>
+                      <Field.Label srOnly>Email Address</Field.Label>
+                      <Input
+                        type="email"
+                        borderRadius="lg"
+                        placeholder="email"
+                        value={email}
+                        onChange={(e) => handleInputChange(e, setEmail)}
+                        name="email"
+                      />
+                    </Field.Root>
+                  </HStack>
 
-      <Link href="https://www.youtube.com/channel/UCPjytC4RPWf1WZ8FIqNT40w" isExternal>
-        <Button w="270px" colorScheme="red" leftIcon={<FaYoutube />}>
-          Youtube
-        </Button>
-      </Link>
-      <Link
-        href="https://open.spotify.com/user/22o5kwvupxfzdyvpxbfjfgtny?si=8a7223da5efa453e&nd=1"
-        isExternal>
-        <Button w="270px" colorScheme="green" leftIcon={<FaSpotify />}>
-          Spotify
-        </Button>
-      </Link>
-    </VStack>
+                  <Field.Root id="message" required>
+                    <Field.Label srOnly>Message</Field.Label>
+                    <Textarea
+                      placeholder="message"
+                      borderRadius="lg"
+                      value={message}
+                      onChange={(e) => handleInputChange(e, setMessage)}
+                      rows={4}
+                      name="message"
+                    />
+                  </Field.Root>
+                  <Button
+                    borderRadius="lg"
+                    type="submit"
+                    colorScheme="blue"
+                    variant="solid"
+                    display="flex"
+                    alignItems="center"
+                    gap={2}
+                    loading={isLoading}
+                    loadingText="Sending..."
+                  >
+                    send
+                    <IoSend size={20} className="send-icon" />
+                  </Button>
+                </VStack>
+              </Fieldset.Content>
+            </VStack>
+          </Fieldset.Root>
+        </chakra.form>
+      </VStack>
+      <Toaster />
+    </Box>
   );
 }
 

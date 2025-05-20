@@ -1,20 +1,27 @@
-import { Heading, Box, Text, useColorModeValue } from '@chakra-ui/react';
+'use client'
+import { Heading, Box, Text, Link } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-const Landing = () => {
-  const nameColor = useColorModeValue('#2B6CB0', '#90CDF4');
+const MotionChevronDown = motion(ChevronDownIcon);
+
+interface Props {
+  message: string;
+  image: string;
+}
+
+const Landing = ({ message="", image }: Props) => {
 
   return (
     <Box
       id="home"
-      pt={{sm:'5rem',md: '7rem',xl: '15rem'}}
-      mt="1rem"
-      pb={{sm:'9rem',md:'1rem'}}
+      pb={{sm:'1rem',md:'1rem'}}
       display="flex"
+      position="relative"
       alignItems="center"
       flexDirection="column"
-      justifyContent="space-between"
+      justifyContent="center"
       minH={'100vh'}>
       <Box
         display="flex"
@@ -26,31 +33,31 @@ const Landing = () => {
           as="h5"
           size="3xl"
           mb="2rem"
-       
           textAlign={['center', 'center', 'center', 'left', 'left']}>
-          <>
-            <Text fontSize={{sm:'2xl',md:'6xl'}} as="kbd">hello! </Text>
-            <br />
-            <Box>
-              <Text fontSize={{sm:'2xl',md:'6xl'}} as="kbd">i'm </Text>
-
-              <Text fontSize={{sm:'2xl',md:'6xl'}} as="kbd" color={nameColor}>
-                mateo pérez.
-              </Text>
-            </Box>
-      
-            <Text fontSize={['xl','2xl','2xl','6xl','6xl']} as="kbd">i google & gpt stuff, people usually call it full stack dev 🤔.</Text>
-          </>
+            <Text
+              fontSize={{sm:'2xl',md:'6xl'}}
+              lineHeight="1"
+              as="kbd"
+              mb={2}
+            >
+              {message}
+            </Text>
         </Heading>
 
-        <Box minH={{sm:250,md:345}} minW={{sm:181,md:250}} position="relative" borderRadius="0.5rem" overflow="hidden">
-          <Image src="/Subject.png" alt="Picture of the author" fill />
+        <Box minH={{base:250,sm:250,md:345}} minW={{base:181,sm:181,md:250}} position="relative" borderRadius="0.5rem" overflow="hidden">
+          <Image src={image} alt="Picture of the author" fill />
         </Box>
       </Box>
 
-      <a href="#about">
-        <ChevronDownIcon cursor="pointer" w="12" h="12" ></ChevronDownIcon>
-      </a>
+      <Link position="absolute" bottom={0} href="#about">
+        <MotionChevronDown
+          cursor="pointer"
+          w="12"
+          h="12"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </Link>
     </Box>
   );
 };

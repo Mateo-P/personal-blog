@@ -1,75 +1,67 @@
-import { Grid, GridItem, ListItem, Wrap, UnorderedList, WrapItem } from '@chakra-ui/react';
-import Section from './Section';
+import {
+  VStack,
+  Box,
+  Heading,
+  Text,
+  List,
+  ListItem,
+  HStack,
+  Badge,
+} from "@chakra-ui/react";
 
-import MusicSection from './MusicSection';
-const About = () => {
-  const age = new Date(Date.now() - 1970).getUTCFullYear() - 2000;
+const birthYear = 2000;
+const age = new Date().getFullYear() - birthYear;
 
-  return (
-    <Grid
-      id="about"
-      w="100%"
-      h={[]}
-      mt="1rem"
-      mb="1rem"
-      templateRows={{md:'repeat(2, 1fr)'}}
-      templateColumns={{md:'repeat(2, 1fr)'}}
-      gap={4}>
-      <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} ml={[]} colSpan={{sm:2,md:1}}>
-        <Section
-          title=" Education 📚"
-          subtitle="CES"
-          link="https://colesan.edu.co/"
-          content="[2002-2017] CES, now CEES, was the only school I studied. In Elementary School i used to participate (some times won) in varaiety of competitions such as tennis, swimming, football & math physics. At
-          HighSchool i started my interests in Tech & Innovation.">
-          <Section
-            subtitle="Andes University"
-            link="https://uniandes.edu.co/"
-            content="[2018-2022] At Andes Unversity I studied and graduated as a Software Engineer with a PGA of 4.04/5 (yeah 404). Here i fell in love with web development and creating stuff."
-          />
-        </Section>
-      </GridItem>
-      <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} colSpan={{sm:2,md:1}}>
-        <Section
-          title=" Made in  🇨🇴"
-          subtitle="Me"
-          content={`Im a ${age} years old software developer from Colombia and world wide citizen. To be more specific I am from  the Colombian Eastern Plains, which make me a cowboy. I like meeting new people and cultures from different parts of the world.`}>
-          <Section subtitle="Hobbies" content="">
-            <UnorderedList>
-              <ListItem>Read</ListItem>
-              <ListItem>Invest</ListItem>
-              <ListItem>Cook</ListItem>
-              <ListItem>Travel</ListItem>
-              <ListItem>Hiking & Football</ListItem>
-            </UnorderedList>
-          </Section>
-        </Section>
-      </GridItem>
-      <GridItem p={2} borderWidth="1px" borderRadius="lg" rowSpan={[1]} colSpan={[2]}>
-        <Section
-          title=" More 🎶"
-          subtitle="Music Taste"
-          content=" If you ask me about my taste it had changed and it will change in the next years. you can
-          even perceive the change in time in my personality. Here is a bit :"
-        />
+const About = () => (
+  <VStack id="about" gap={8} mt="2rem" mb="2rem">
+    <VStack alignItems="stretch">
+      <Heading size="xl" textAlign="center">
+        about
+      </Heading>
+      <Text textAlign="center" color="gray.500" maxW="2xl" mx="auto">
+        Here are some of the projects I've worked on. Each project represents a
+        unique challenge and learning opportunity.
+      </Text>
+      <Heading as="h3" size="md" mb={2}>
+        made in 🇨🇴
+      </Heading>
+      <Text mb={4} divideX="1px">
+        i'm a {age}-year-old software developer from the colombian eastern
+        plains (yes, a cowboy 🤠). i love exploring new cultures, meeting
+        people, and building things with code.
+      </Text>
+      <Heading as="h4" size="sm" mb={2}>
+        hobbies
+      </Heading>
+      <HStack gap={2}>
+        <Badge variant="subtle">read</Badge>
+        <Badge variant="subtle">invest</Badge>
+        <Badge variant="subtle">cook</Badge>
+        <Badge variant="subtle">travel</Badge>
+        <Badge variant="subtle">hiking & football</Badge>
+      </HStack>
+    </VStack>
 
-        <Wrap spacing="30px">
-          <WrapItem display="flex" flexDirection="column">
-            <MusicSection genre="Latin" src="track/6RmnotfWeDu72fXhpo26Bq" />
-          </WrapItem>
-          <WrapItem display="flex" flexDirection="column">
-            <MusicSection genre="Rock" src="track/4oDZ5L8izBals6jKBJDBcX" />
-          </WrapItem>
-          <WrapItem display="flex" flexDirection="column">
-            <MusicSection genre="Electronic" src="track/1cG0umU5TKStygKsPFZ9pY" />
-          </WrapItem>
-          <WrapItem display="flex" flexDirection="column">
-            <MusicSection genre="Full Playlist" src="playlist/5JCT2TbnPKQp5tGWJ8zCdH" />
-          </WrapItem>
-        </Wrap>
-      </GridItem>
-    </Grid>
-  );
-};
+    <Box>
+      <Heading as="h3" size="md" mb={2}>
+        education 📚
+      </Heading>
+      <Text>
+        <b>andes university</b> <br />
+        <Badge variant="subtle">2018-2022</Badge> studied and graduated as a
+        software engineer with a gpa of 4.04/5 (yeah, 404). here i fell in love
+        with web development, creating stuff & finances.
+      </Text>
+      <Text>
+        <b>cees</b> <br />
+        <Badge variant="subtle">2002-2017</Badge> i would not
+        define myself as a good student, but as a curious & competitive person.
+        i participated (and sometimes won) in tennis, swimming, football, and
+        math/physics competitions. in high school, i started my interests in
+        tech & innovation.
+      </Text>
+    </Box>
+  </VStack>
+);
 
 export default About;

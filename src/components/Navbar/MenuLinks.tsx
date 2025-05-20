@@ -1,6 +1,8 @@
-import { Box, Button, Stack, useColorMode } from '@chakra-ui/react';
-import MenuItem from './MenuItem';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+"use client";
+import { Box, Stack } from "@chakra-ui/react";
+import MenuItem from "./MenuItem";
+import { useColorMode } from "../ui/color-mode";
+import { IoMoon, IoSunny } from "react-icons/io5";
 type Props = {
   links: any[];
   toggle: () => void;
@@ -12,23 +14,26 @@ const MenuLinks = ({ links, toggle, isOpen }: Props) => {
 
   return (
     <Box
-      display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
-      flexBasis={{ base: '100%', md: 'auto' }}>
+      display={{ base: isOpen ? "block" : "none", md: "block" }}
+      flexBasis={{ base: "100%", md: "auto" }}
+    >
       <Stack
-        spacing={8}
+        gap={{base: 2,sm: 4, md: 8}}
         align="center"
-        justify={['center', 'space-between', 'flex-end', 'flex-end']}
-        direction={{ sm: 'column', md: 'row' }}
-        pt={[4, 4, 0, 0]}>
+        justify={["center", "space-between", "flex-end", "flex-end"]}
+        direction={{base: "column",sm: "column", md: "row" }}
+        pb={{base: 2,sm: 2, md: 0}}
+      >
         {links.map(({ label, to }) => (
           <MenuItem key={label} onClick={toggle} to={to}>
             {label}
           </MenuItem>
         ))}
-
-        <Button colorScheme="blue" variant="solid" onClick={toggleColorMode}>
-          {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-        </Button>
+        {colorMode === "light" ? (
+          <IoMoon cursor="pointer" width={5} height={5} onClick={toggleColorMode} />
+        ) : (
+          <IoSunny cursor="pointer" width={5} height={5} onClick={toggleColorMode} />
+        )}
       </Stack>
     </Box>
   );
