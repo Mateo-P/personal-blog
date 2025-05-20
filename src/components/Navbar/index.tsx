@@ -7,7 +7,7 @@ import NavBarContainer from "./NavBarContainer";
 import MenuLinks from "./MenuLinks";
 interface Props {
   logo: string;
-  links: any;
+  links: { label: string; to: string }[];
 }
 const Navbar = ({ logo, links }: Props) => {
   const [isOpen, setIsOpen] = useState(true);

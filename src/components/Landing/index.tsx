@@ -1,10 +1,10 @@
 'use client'
 import { Heading, Box, Text, Link } from '@chakra-ui/react';
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { IoChevronDownSharp } from "react-icons/io5";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const MotionChevronDown = motion(ChevronDownIcon);
+const MotionChevronDown = motion(IoChevronDownSharp);
 
 interface Props {
   message: string;
@@ -52,8 +52,7 @@ const Landing = ({ message="", image }: Props) => {
       <Link position="absolute" bottom={0} href="#about">
         <MotionChevronDown
           cursor="pointer"
-          w="12"
-          h="12"
+          size={30}
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
         />

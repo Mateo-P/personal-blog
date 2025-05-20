@@ -12,7 +12,7 @@ import {
   ButtonGroup,
   IconButton,
 } from "@chakra-ui/react";
-import { LuChevronLeft, LuChevronRight, LuTrophy } from "react-icons/lu";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
 type Items = {
   title: string;

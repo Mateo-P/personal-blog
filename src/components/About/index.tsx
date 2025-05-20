@@ -3,8 +3,6 @@ import {
   Box,
   Heading,
   Text,
-  List,
-  ListItem,
   HStack,
   Badge,
 } from "@chakra-ui/react";
@@ -18,15 +16,11 @@ const About = () => (
       <Heading size="xl" textAlign="center">
         about
       </Heading>
-      <Text textAlign="center" color="gray.500" maxW="2xl" mx="auto">
-        Here are some of the projects I've worked on. Each project represents a
-        unique challenge and learning opportunity.
-      </Text>
       <Heading as="h3" size="md" mb={2}>
         made in 🇨🇴
       </Heading>
       <Text mb={4} divideX="1px">
-        i'm a {age}-year-old software developer from the colombian eastern
+        i&apos;m a {age}-year-old software developer from the colombian eastern
         plains (yes, a cowboy 🤠). i love exploring new cultures, meeting
         people, and building things with code.
       </Text>

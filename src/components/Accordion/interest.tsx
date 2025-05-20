@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Heading, Text, Image, VStack, HStack, Badge, Stack } from '@chakra-ui/react';
+import { Heading, Text, Image, VStack, HStack, Badge } from '@chakra-ui/react';
 
 interface Book {
   title: string;

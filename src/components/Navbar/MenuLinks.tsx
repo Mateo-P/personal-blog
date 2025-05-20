@@ -1,10 +1,10 @@
 "use client";
 import { Box, Stack } from "@chakra-ui/react";
 import MenuItem from "./MenuItem";
-import { useColorMode } from "../ui/color-mode";
+import { useColorMode } from "@/components/ui/color-mode";
 import { IoMoon, IoSunny } from "react-icons/io5";
 type Props = {
-  links: any[];
+  links: { label: string; to: string }[];
   toggle: () => void;
   isOpen?: boolean;
 };

@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 
 type Props = {
-  children?: any;
+  children?: React.ReactNode;
   to?: string;
   onClick?: () => void;
 };

@@ -74,7 +74,7 @@ function Contact() {
           contact
         </Heading>
         <Text textAlign="center" color="gray.500" maxW="2xl" mx="auto">
-          feel free to reach out. i'm always open to discussing new projects,
+          feel free to reach out. i&apos;m always open to discussing new projects,
           creative ideas or just to say hi.
         </Text>
         <chakra.form ref={formRef} onSubmit={handleSubmit} width="100%">

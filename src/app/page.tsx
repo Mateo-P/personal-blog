@@ -1,10 +1,7 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import { Landing } from "@/components";
 import { About, Contact, TimeLine, AccordionList, Projects } from "@/components";
-import { Spacer, VStack } from "@chakra-ui/react";
-import { Flex } from "@chakra-ui/react";
-import { Box } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 

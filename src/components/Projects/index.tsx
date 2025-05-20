@@ -8,7 +8,6 @@ import {
   Badge,
   HStack,
   VStack,
-  Link,
 } from "@chakra-ui/react";
 
 const projects = {
@@ -58,7 +57,7 @@ const Projects = () => {
         {projects.title}
       </Heading>
       <Text textAlign="center" color="gray.500" maxW="2xl" mx="auto">
-        here are some of the projects i've worked on. each project represents a
+        here are some of the projects i&apos;ve worked on. each project represents a
         unique challenge and learning opportunity.
       </Text>
 
