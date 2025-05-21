@@ -27,7 +27,6 @@ const icons = {
 };
 
 const TimeLine = ({ title, items }: Props) => {
-  console.log(items);
   return (
     <Box id="experience" mx="auto" p={2}>
       <Heading size="xl" mb={4} textAlign="center">

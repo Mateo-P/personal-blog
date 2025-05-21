@@ -23,8 +23,6 @@ export async function GET() {
           {
             title: "Steve Jobs",
             author: "Walter Isaacson",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 4.5,
             genre: "Fiction",
@@ -32,8 +30,6 @@ export async function GET() {
           {
             title: "12 Rules for Life",
             author: "Jordan B. Peterson",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1588314276i/41881472.jpg",
             year: "2021",
             rating: 4.6,
             genre: "Sci-Fi",
@@ -41,8 +37,6 @@ export async function GET() {
           {
             title: "Atomic Habits",
             author: "James Clear",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg",
             year: "2018",
             rating: 4.7,
             genre: "Self-Help",
@@ -50,8 +44,6 @@ export async function GET() {
           {
             title: "The Psychology of Money",
             author: "Morgan Housel",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1588314276i/41881472.jpg",
             year: "2020",
             rating: 5,
             genre: "Finance",
@@ -59,8 +51,6 @@ export async function GET() {
           {
             title: "thinking fast and slow",
             author: "Daniel Kahneman",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 5,
             genre: "Finance",
@@ -68,8 +58,6 @@ export async function GET() {
           {
             title: "the second mountain",
             author: "david brooks",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 4.9,
             genre: "personal development",
@@ -77,8 +65,6 @@ export async function GET() {
           {
             title: "sapiens",
             author: "yuval noah harari",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 5,
             genre: "history",
@@ -86,8 +72,6 @@ export async function GET() {
           {
             title: "homo deus",
             author: "yuval noah harari",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 5,
             genre: "history",
@@ -95,8 +79,6 @@ export async function GET() {
           {
             title: "the changing world order",
             author: "ray dalio",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 4.8,
             genre: "history",
@@ -104,8 +86,6 @@ export async function GET() {
           {
             title: "1984",
             author: "george orwell",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 4.1,
             genre: "history",
@@ -113,8 +93,6 @@ export async function GET() {
           {
             title: "man's search for meaning",
             author: "viktor frankl",
-            coverUrl:
-              "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
             year: "2020",
             rating: 4.6,
             genre: "history",

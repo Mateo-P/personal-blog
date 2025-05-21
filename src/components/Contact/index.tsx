@@ -44,7 +44,6 @@ function Contact() {
         title: "email sent",
         description: "message sent successfully!",
       })
-      console.log("email sent");
     } catch (error) {
       console.error('Error sending email:', error);
       toaster.error({

@@ -4,7 +4,7 @@ import { IoChevronDownSharp } from "react-icons/io5";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const MotionChevronDown = motion(IoChevronDownSharp);
+const MotionChevronDown = motion.create(IoChevronDownSharp);
 
 interface Props {
   message: string;
