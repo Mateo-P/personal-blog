@@ -15,7 +15,7 @@ type SocialLink = {
   color: string;
 };
 
-type Props = {
+export type FooterProps = {
   socialLinks: SocialLink[];
   footerText: string;
 };
@@ -26,7 +26,7 @@ type Props = {
   twitter: <FaTwitter size={25} />,
   instagram: <FaInstagram size={25} />,
  }
-function Footer({ socialLinks, footerText }: Props) {
+const Footer = ({ socialLinks, footerText }: FooterProps) => {
   const year = new Date(Date.now() - 1970).getUTCFullYear();
 
   return (

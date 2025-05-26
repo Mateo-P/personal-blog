@@ -6,14 +6,13 @@ import { IconType } from "react-icons";
 
 type TimelineItem = {
   type: "work" | "project" | "education" | "volunteer" | "other";
-  title: string;
+  title?: string;
   period: string[];
   description: string;
-  icon: IconType;
-  isSideProject?: boolean;
+  icon?: IconType;
 };
 
-type Props = {
+export type TimeLineProps = {
   title?: string;
   items: TimelineItem[];
 };
@@ -26,7 +25,7 @@ const icons = {
   other: <LuPackage size={15} />,
 };
 
-const TimeLine = ({ title, items }: Props) => {
+const TimeLine = ({ title, items }: TimeLineProps) => {
   return (
     <Box id="experience" mx="auto" p={2}>
       <Heading size="xl" mb={4} textAlign="center">

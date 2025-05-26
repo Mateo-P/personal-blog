@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 const MotionChevronDown = motion.create(IoChevronDownSharp);
 
-interface Props {
+export type LandingProps = {
   message: string;
   image: string;
 }
 
-const Landing = ({ message="", image }: Props) => {
+const Landing = ({ message="", image }: LandingProps) => {
 
   return (
     <Box
