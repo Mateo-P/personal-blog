@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 const MotionChevronDown = motion.create(IoChevronDownSharp);
 
-interface Props {
+export type LandingProps = {
   message: string;
   image: string;
 }
 
-const Landing = ({ message="", image }: Props) => {
+const Landing = ({ message="", image }: LandingProps) => {
 
   return (
     <Box
@@ -27,12 +27,10 @@ const Landing = ({ message="", image }: Props) => {
         display="flex"
         w="100%"
         alignItems="center"
-        flexDirection={['column', 'column', 'column', 'column', 'row']}
-        justifyContent="space-between">
+        flexDirection={['column', 'column', 'column', 'column', 'row']}>
         <Heading
           as="h5"
           size="3xl"
-          mb="2rem"
           textAlign={['center', 'center', 'center', 'left', 'left']}>
             <Text
               fontSize={{sm:'2xl',md:'6xl'}}
@@ -44,7 +42,7 @@ const Landing = ({ message="", image }: Props) => {
             </Text>
         </Heading>
 
-        <Box minH={{base:250,sm:250,md:345}} minW={{base:181,sm:181,md:250}} position="relative" borderRadius="0.5rem" overflow="hidden">
+        <Box minH={{base:250,sm:181,md:350}} minW={{base:181,sm:181,md:350}} position="relative" borderRadius="0.5rem" overflow="hidden">
           <Image src={image} alt="Picture of the author" fill />
         </Box>
       </Box>

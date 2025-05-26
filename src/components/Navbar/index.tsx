@@ -5,11 +5,11 @@ import NavbarLogo from "./NavbarLogo";
 import MenuToggle from "./Menutoggle";
 import NavBarContainer from "./NavBarContainer";
 import MenuLinks from "./MenuLinks";
-interface Props {
+export type NavbarProps = {
   logo: string;
   links: { label: string; to: string }[];
 }
-const Navbar = ({ logo, links }: Props) => {
+const Navbar = ({ logo, links }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggle = () => setIsOpen(!isOpen);

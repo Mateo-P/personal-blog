@@ -17,12 +17,12 @@ import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 type Items = {
   title: string;
   author: string;
-  coverUrl: string;
+  coverUrl?: string;
   year: string;
   rating: number;
   genre: string;
 };
-type Props = {
+export type AccordionListProps = {
   title: string;
   sortBy: string;
   sortOrder: "asc" | "desc";
@@ -42,7 +42,7 @@ const colorRating = (rating: number) => {
     return "red";
   }
 };
-const AccordionList = ({ title, sortBy, sortOrder, items }: Props) => {
+const AccordionList = ({ title, sortBy, sortOrder, items }: AccordionListProps) => {
   const [page, setPage] = useState(0);
   const paginatedItems = items.sort((a, b) => {
     if (sortBy === "rating") {
