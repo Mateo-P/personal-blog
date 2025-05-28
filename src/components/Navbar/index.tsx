@@ -10,7 +10,7 @@ export type NavbarProps = {
   links: { label: string; to: string }[];
 }
 const Navbar = ({ logo, links }: NavbarProps) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
   return (

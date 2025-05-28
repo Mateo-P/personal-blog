@@ -42,7 +42,7 @@ const Landing = ({ message="", image }: LandingProps) => {
             </Text>
         </Heading>
 
-        <Box minH={{base:250,sm:181,md:350}} minW={{base:181,sm:181,md:350}} position="relative" borderRadius="0.5rem" overflow="hidden">
+        <Box minH={{base:250,sm:250,md:350}} minW={{base:250,sm:250,md:350}} position="relative" borderRadius="0.5rem" overflow="hidden">
           <Image src={image} alt="Picture of the author" fill />
         </Box>
       </Box>
