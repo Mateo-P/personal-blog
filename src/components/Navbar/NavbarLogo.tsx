@@ -6,7 +6,7 @@ const NavbarLogo = ({ logo }: Props) => {
   return (
     <Center cursor="pointer">
       <a href={'#home'}>
-        <Heading mt={-3} textAlign={"center"} size="4xl">
+        <Heading mt={-3} textAlign={"center"} size="4xl" fontSize="34px">
           {logo}
         </Heading>
       </a>

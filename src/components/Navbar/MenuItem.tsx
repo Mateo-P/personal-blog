@@ -11,6 +11,7 @@ const MenuItem = ({ onClick, children, to = "/" }: Props) => {
       <Text
         cursor="pointer"
         display="block"
+        fontSize="14px"
         _hover={{ color: "var(--chakra-colors-fg)" }}
         color="var(--chakra-colors-fg-muted)"
       >
