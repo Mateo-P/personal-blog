@@ -1,4 +1,3 @@
-import { getDomainLogo } from "@/utils/domainLogo";
 import {
   Box,
   SimpleGrid,
@@ -13,9 +12,8 @@ import {
 type Project = {
   title: string;
   description: string;
-  domain: string;
   technologies: string[];
-  image?: string;
+  image: string;
 };
 export type ProjectsProps = {
   title: string;
@@ -33,19 +31,29 @@ const Projects = ({ title, subtitle, items }: ProjectsProps) => {
         {subtitle}
       </Text>
 
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={8} mt={8}>
-        {items.map(async (project, index) => {
-          const logo = await getDomainLogo(project.domain, "medium");
+      {/* phones: horizontal swipe row; md+: grid */}
+      <SimpleGrid
+        columns={{ md: 2, xl: 4 }}
+        gridAutoFlow={{ base: "column", md: "row" }}
+        gridAutoColumns={{ base: "80%", md: "auto" }}
+        overflowX={{ base: "auto", md: "visible" }}
+        scrollSnapType="x mandatory"
+        gap={{ base: 4, md: 6 }}
+        mt={8}
+        pb={{ base: 2, md: 0 }}
+      >
+        {items.map((project, index) => {
           return (
             <Box
               key={index}
               borderWidth="1px"
               borderRadius="lg"
               overflow="hidden"
+              scrollSnapAlign="start"
             >
-              <Box position="relative" height="125px">
+              <Box position="relative" aspectRatio={1}>
                 <Image
-                  src={logo ? logo : project.image}
+                  src={project.image}
                   alt={project.title}
                   objectFit="cover"
                   width="100%"
